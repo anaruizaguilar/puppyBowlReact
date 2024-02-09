@@ -9,3 +9,14 @@ export async function fetchAllPlayers() {
         console.error('Trouble fetching players', err);
     }
 }
+
+export async function fetchSinglePlayer(playerId) {
+    try {
+        const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2308-ACC-ET-WEB-PT-A/players/${playerId}`);
+        const data = await response.json();
+        console.log(data.data.player);
+        return data.data.player;
+    } catch (err) {
+        console.error(`Trouble fetching player`, err);
+    }
+}
