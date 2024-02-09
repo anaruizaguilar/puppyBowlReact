@@ -9,8 +9,8 @@ const [players, setPlayers] = useState([]);
 useEffect(() => {
     async function fetchPlayers () {
         try{
-            fetchAllPlayers();
-            setPlayers(players);
+            const allPlayers = await fetchAllPlayers();
+            setPlayers(allPlayers);
         } catch (error) {
             console.error(error);
         }
@@ -24,8 +24,8 @@ useEffect(() => {
         {
             players.map((player) => {
                 return (
-                    <div>
-                        <li key={player.id}>
+                    <div key={player.id}>
+                        <li >
                             <h3>{player.name}</h3>
                             <h4>{player.breed}</h4>
                             <img src={player.imageUrl} alt="" />

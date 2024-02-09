@@ -1,9 +1,7 @@
-const cohortName = '2308-ACC-ET-WEB-PT-A';
-const API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/players`;
 
 export async function fetchAllPlayers() {
     try{
-        const response = await fetch(API_URL);
+        const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2308-ACC-ET-WEB-PT-A/players`);
         const result = await response.json();
         console.log(result.data.players);
         return result.data.players;
