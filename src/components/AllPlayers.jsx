@@ -1,8 +1,8 @@
-import { fetchAllPlayers } from "../API/index";
+import { fetchAllPlayers, fetchSinglePlayer } from "../API/index";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import SinglePlayer from "./SinglePlayer";
+import { useNavigate, useParams } from "react-router-dom";
+//import SinglePlayer from "./SinglePlayer";
 
 function AllPlayers() {
 
@@ -21,6 +21,7 @@ useEffect(() => {
 }, [])
 
 const navigate = useNavigate();
+const { id } = useParams();
 
     return(
     <div className="all-players">
@@ -33,7 +34,12 @@ const navigate = useNavigate();
                             <img src={player.imageUrl} alt="" height="50%" width="50%"/>
                             <h4>{player.status}</h4>
                             <button className="details-button" data-id={player.id} onClick={(e) => {
-                                console.log(e.target.dataset.id)
+                                //console.log(e.target.dataset.id)
+                                const id = e.target.dataset.id;
+                                console.log(id);
+                                fetchSinglePlayer(id);
+                                
+                                navigate(`/players/:id`);
                                 }}>Details</button>
                             <button className="delete-button" onClick={() => SinglePlayer}>Remove</button>           
                     </section>
