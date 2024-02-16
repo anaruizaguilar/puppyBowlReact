@@ -12,6 +12,7 @@ useEffect(() => {
     async function fetchPlayers () {
         try{
             const allPlayers = await fetchAllPlayers();
+            console.log(allPlayers);
             setPlayers(allPlayers);
         } catch (error) {
             console.error(error);

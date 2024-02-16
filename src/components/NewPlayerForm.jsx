@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewPlayerForm() {
 
@@ -7,6 +8,8 @@ function NewPlayerForm() {
     const [status, setStatus] = useState("");
     const [imageUrl, setImageUrl] = useState("");
     const [error, setError] = useState(null);
+
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -29,6 +32,7 @@ function NewPlayerForm() {
         setBreed("");
         setStatus("");
         setImageUrl("");
+        navigate("/");
     }
 
     return (
@@ -48,7 +52,7 @@ function NewPlayerForm() {
             <label>
                 Image: {""} <input value={imageUrl} onChange={(e) => {setImageUrl(e.target.value);}} />
             </label>
-            <button type="submit">Submit</button>
+            <button className="add-player-button" type="submit">Submit</button>
         </form>
     </div>
     );
