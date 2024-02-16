@@ -22,3 +22,14 @@ export async function fetchSinglePlayer(id) {
     }
 }
 
+export async function deletePlayer(id) {
+    try {
+        const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2308-ACC-ET-WEB-PT-A/players/${id}`, {
+            method: 'DELETE',
+        });
+        await response.json();
+        fetchAllPlayers();
+    } catch (err) {
+        console.error(`Trouble removing player ${player.id}`, err);
+    }
+}

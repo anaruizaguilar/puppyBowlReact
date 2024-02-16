@@ -15,7 +15,7 @@ function NewPlayerForm() {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/COHORT-NAME/players', 
+            const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/2308-ACC-ET-WEB-PT-A/players', 
             {
                 method: 'POST',
                 headers: {

@@ -26,11 +26,11 @@ const navigate = useNavigate();
 
     return (
     <div key={id} className="single-player">
+        <button className="return-button" onClick={() => navigate('/')}>X</button> 
         <h1>{player.name}</h1>
         <img src={player.imageUrl} alt="" width="50%" height="50%"/>
-        <h2>{player.breed}</h2>
-        <h2>{player.status}</h2>
-        <button className="return-button" onClick={() => navigate('/')}>X</button> 
+        <p>{player.breed}</p>
+        <p>{player.status}</p>
     </div>
     );
 }

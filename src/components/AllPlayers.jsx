@@ -1,7 +1,7 @@
-import { fetchAllPlayers, fetchSinglePlayer } from "../API/index";
+import { deletePlayer, fetchAllPlayers, fetchSinglePlayer } from "../API/index";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function AllPlayers() {
@@ -30,13 +30,17 @@ const navigate = useNavigate();
                 return (
                     <section key={player.id} className="cards">             
                             <h2>{player.name}</h2>
-                            <img src={player.imageUrl} alt="" height="40%" width="40%"/>
+                            <img src={player.imageUrl} alt=""/>
                             <button className="details-button" data-id={player.id} onClick={(e) => {
                                 const id = e.target.dataset.id;
                                 fetchSinglePlayer(id);
                                 navigate(`/players/${player.id}`);
                                 }}>Details</button>
-                            <button className="delete-button" onClick={() => SinglePlayer}>Remove</button>           
+                            <button className="delete-button" data-id={player.id} onClick={(e) => {
+                                const id = e.target.dataset.id;
+                                deletePlayer(id);
+                                navigate('/');
+                            }}>Remove</button>           
                     </section>
                 )
             })

@@ -1,42 +1,81 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  background-color: darkslategray;
   text-align: center;
+  justify-items: inherit;
 }
 
-.logo {
-  height: 6em;
+ul {
+  list-style-type: none;
+  font-size: x-large;
+  font-weight: 500;
+  background-color:cadetblue;
   padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li {
+  display: inline;
+  float: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+link {
+  display: block;
+  background-color: lightslategray;
+  padding: 8px;
+  margin: 10px;
 }
 
-.card {
-  padding: 2em;
+.new-player-form-link {
+  float: right;
 }
 
-.read-the-docs {
-  color: #888;
+.cards {
+  display: block;
+  margin: 10px;
+  margin-right: 20em;
+  padding: 0.2em 0.5em;
+  background-color: lightseagreen;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif; 
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.single-player {
+  display: block;
+  margin: 10px;
+  margin-right: 20em;
+  padding: 0.2em 0.5em;
+  color: azure;
+  text-align: left;
+  background-color:brown;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif; 
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 0.6em 1.2em;
+  font-size: medium;
+  font-weight: 300;
+  font-family: inherit;
+}
+
+img {
+  height: 80%;
+  width: 80%;
+}
+
+.new-player-form {
+  display: block;
+  background-color: brown;
+  color: azure;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  padding: 1em;
+  margin: 20px;
+  border-radius: 8px;
 }
