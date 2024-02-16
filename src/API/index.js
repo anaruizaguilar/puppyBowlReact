@@ -21,3 +21,4 @@ export async function fetchSinglePlayer(id) {
         console.error(`Trouble fetching player`, err);
     }
 }
+
